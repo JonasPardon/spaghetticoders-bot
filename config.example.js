@@ -1,4 +1,7 @@
 module.exports = {
+    // * If true, only bot owners can call commands
+    dev: true,
+
     token: '',
 
     prefix: '',
@@ -9,6 +12,9 @@ module.exports = {
         user: '',
         password: '',
         database: '',
-        charset: ''
-    }
+        charset: 'utf8mb4_general_ci'
+    },
+
+    // * Array of user ID's
+    owner: []
 }
