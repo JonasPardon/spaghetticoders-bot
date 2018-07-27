@@ -1,0 +1,23 @@
+{
+  "name": "spaghetticoders-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for SpaghettiCoders",
+  "main": "sc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonasPardon/spaghetticoders-bot.git"
+  },
+  "author": "Stache & Pollie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JonasPardon/spaghetticoders-bot/issues"
+  },
+  "homepage": "https://github.com/JonasPardon/spaghetticoders-bot#readme",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "mysql": "^2.16.0"
+  }
+}
