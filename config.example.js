@@ -16,5 +16,9 @@ module.exports = {
     },
 
     // * Array of user ID's
-    owner: []
+    owner: [],
+
+    channels: {
+        reactionRoles: ''
+    }
 }

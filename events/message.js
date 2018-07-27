@@ -5,7 +5,7 @@ module.exports = async (client, msg) => {
     // * If in dev mode, check if sender of the message is a bot owner
     // * If not a bot owner, return
     if(client.config.dev === true){
-        if(client.config.owner.indexOf(msg.member.id) < 0) return;
+        if(client.config.owner.indexOf(msg.author.id) < 0) return;
     }
 
     // * Ignore if not a command or if the author is a bot

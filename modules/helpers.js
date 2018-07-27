@@ -12,4 +12,21 @@ module.exports = async client => {
         }
     }
 
+    client.loadReactionsChannel = async () => {
+        return new Promise(async (resolve, reject) => {
+            const reactionChannel = await client.channels.get(client.config.channels.reactionRoles);
+
+            client.settings.reactionChannel = reactionChannel;
+            
+            await reactionChannel.fetchMessages()
+                .then(messages => {
+                    console.log('Reactions channel cached and ready to go!');
+                    return resolve();
+                })
+                .catch(err => {
+                    reject(err);
+                });
+        });
+    }
+
 }

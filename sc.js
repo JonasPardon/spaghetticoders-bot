@@ -41,9 +41,9 @@ class SpaghettiClient extends Discord.Client {
             client.on(eventName, event.bind(null, client));
             console.log(` - Loaded event '${eventName}'`);
         });
+
+        this.login(this.config.token);
     }
 }
 
 const client = new SpaghettiClient();
-
-client.login(config.token);
