@@ -3,13 +3,23 @@ module.exports = async client => {
     client.loadCommand = (commandName) => {
         try {
             const command = require(`../commands/${commandName}`);
-            console.log(` - Loaded Command: ${command.help.name}. 👌`);
             client.commands[commandName.substring(0, commandName.length - 3)] = command;
-
-            return false;
+            console.log(` 👌 Loaded Command: ${command.help.name}.`);
         } catch (e) {
-            return `Unable to load command ${commandName}: ${e}`;
+            console.log(`Unable to load command ${commandName}: ${e}`);
         }
+    }
+
+    client.loadEvent = (eventName) => {
+        try{
+            eventName = eventName.split(".")[0];
+            const event = require(`./../events/${eventName}`);
+            client.on(eventName, event.bind(null, client));
+            console.log(` 👌 Loaded event: ${eventName}.`);
+        }catch(e){
+            console.log(`Unable to load event ${eventName}: ${e}`);
+        }
+        
     }
 
     client.loadReactionsChannel = async () => {

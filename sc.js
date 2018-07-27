@@ -25,21 +25,18 @@ class SpaghettiClient extends Discord.Client {
         // * Load all commands from the commands folder
         this.commands = [];
         const cmdFiles = await readdir("./commands/");
-        console.log(`Loading a total of ${cmdFiles.length} commands.`);
+        console.log(`Loading a total of ${cmdFiles.length} commands...`);
         cmdFiles.forEach(f => {
             if (!f.endsWith(".js")) return;
-            const response = this.loadCommand(f);
-            if (response) console.log(response);
+            this.loadCommand(f);
         });
 
         // * Load all events from the event folder and bind them to the client
         const evtFiles = await readdir("./events/");
-        console.log(`Loading a total of ${evtFiles.length} events.`);
-        evtFiles.forEach(file => {
-            const eventName = file.split(".")[0];
-            const event = require(`./events/${file}`);
-            client.on(eventName, event.bind(null, client));
-            console.log(` - Loaded event '${eventName}'`);
+        console.log(`Loading a total of ${evtFiles.length} events...`);
+        evtFiles.forEach(f => {
+            if(!f.endsWith(".js")) return;
+            this.loadEvent(f);
         });
 
         this.login(this.config.token);
