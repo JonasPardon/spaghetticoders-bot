@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const config = require('./config');
-const { promisify } = require("util");
+const {
+    promisify
+} = require("util");
 const readdir = promisify(require("fs").readdir);
 
 /**
@@ -18,6 +20,17 @@ class SpaghettiClient extends Discord.Client {
     async init() {
         // * Require all modules
         require('./modules/reactionRoles')(this);
+        require('./modules/helpers')(this);
+
+        // * Load all commands from the commands folder
+        this.commands = [];
+        const cmdFiles = await readdir("./commands/");
+        console.log(`Loading a total of ${cmdFiles.length} commands.`);
+        cmdFiles.forEach(f => {
+            if (!f.endsWith(".js")) return;
+            const response = this.loadCommand(f);
+            if (response) console.log(response);
+        });
 
         // * Load all events from the event folder and bind them to the client
         const evtFiles = await readdir("./events/");
