@@ -1,4 +1,4 @@
-AlphaConsole Discord Bot
+SpaghettiCoders Discord Bot
 ===================
 
 
