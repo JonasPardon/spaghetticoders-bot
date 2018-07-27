@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 module.exports = async (client, messageReaction, user) => {
     
     // * If it's not the defined reaction channel, ignore the reaction
@@ -9,5 +11,7 @@ module.exports = async (client, messageReaction, user) => {
     console.log(`#### Reaction clicked [${time}]`);
     console.log(`   # Reaction: ${messageReaction._emoji.name}`);
     console.log(`   # User: ${user.tag}`);
+
+    client.giveRoleFromReaction(user, messageReaction._emoji.name);
 
 }

@@ -5,6 +5,7 @@ module.exports = async client => {
     client.user.setActivity(`${client.config.prefix}help`, {type: "PLAYING"});
 
     client.settings = {};
+    client.guild = client.guilds.first();
 
     client.loadReactionsChannel();
 }

@@ -19,6 +19,10 @@ module.exports = {
     owner: [],
 
     channels: {
-        reactionRoles: ''
+        reactionRoles: 'channel ID'
+    },
+
+    roles: {
+        reactionName: 'role ID'
     }
 }

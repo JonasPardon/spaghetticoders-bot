@@ -19,7 +19,7 @@ class SpaghettiClient extends Discord.Client {
 
     async init() {
         // * Require all modules
-        require('./modules/reactionRoles')(this);
+        require('./modules/roles')(this);
         require('./modules/helpers')(this);
 
         // * Load all commands from the commands folder
