@@ -14,6 +14,12 @@ class SpaghettiClient extends Discord.Client {
         super();
         this.config = config;
 
+        this.embed = () => {
+            return new Discord.RichEmbed()
+                .setColor(config.embed.color)
+                .setTimestamp();
+        } 
+
         this.init();
     }
 

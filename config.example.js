@@ -24,5 +24,12 @@ module.exports = {
 
     roles: {
         reactionName: 'role ID'
-    }
+    },
+
+    embed: {
+        footer: '',
+        color: '#5691c8'
+    },
+
+    mdn: 'https://developer.mozilla.org/en-US/search?q={term}&topic=apps&topic=html&topic=css&topic=js&topic=api&topic=canvas&topic=svg&topic=webgl&topic=mobile&topic=webdev&topic=http&topic=webext&topic=standards'
 }

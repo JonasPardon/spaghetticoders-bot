@@ -10,7 +10,7 @@ module.exports = async (client, msg) => {
 
     // * Ignore if not a command or if the author is a bot
     if(msg.author.bot) return;
-    if(!msg.content.startsWith(client.config.prefix)) return;
+    if(!msg.content.toLowerCase().startsWith(client.config.prefix)) return;
 
     // * Extract the arguments and shift to get rid of the prefix
     const args = msg.content.split(' ');

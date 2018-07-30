@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/JonasPardon/spaghetticoders-bot#readme",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
     "discord.js": "^11.3.2",
     "moment": "^2.22.2",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.3"
