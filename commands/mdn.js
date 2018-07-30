@@ -44,7 +44,7 @@ exports.run = async (client, msg, args) => {
         })
         .catch(err => {
             console.error(err);
-        })
+        });
 }
 
 exports.help = {
