@@ -37,9 +37,8 @@ exports.run = async (client, msg, args) => {
             // * Get rid of the link and whitespace at the end
             description = description.substring(0, description.indexOf(link));
 
-            embed.setAuthor(title, msg.author.avatarURL)
-                .addField('Description', `*${description}*`)
-                .addField('Link', `[Link to MDN page](https://${link})`);
+            embed.setAuthor(`MDN web docs`, msg.author.avatarURL)
+                .setDescription(`__**[${title}](https://${link})**__\n\n*${description}*`);
             
             return msg.channel.send(embed);
         })
