@@ -7,7 +7,7 @@ This is the official Discord bot for [The Coding Bible Server](https://discord.g
 ----------
 
 
-What is SpaghettiCoders?
+What is The Coding Bible?
 -------------
 We are a Discord server based around coding in general.
 
